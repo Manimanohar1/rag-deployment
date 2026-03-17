@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: task-pv-volume-db
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/mnt/qdrant-data"
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: task-pv-claim-db
+spec:
+  volumeName: task-pv-volume-db
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 5Gi
