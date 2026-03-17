@@ -1,0 +1,13 @@
+# Schema For DB 
+#!/usr/bin/env python3
+import requests
+url = "http://172.20.107.75:6333/collections/k8s_knowledge"
+
+payload = {
+    "vectors": {
+        "size": 384,
+        "distance": "Cosine"
+    }
+}
+response = requests.put(url, json=payload)
+print(f"Database Response: {response.json()}")
