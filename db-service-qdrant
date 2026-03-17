@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2026-03-17T04:25:07Z"
+  labels:
+    app: db
+  name: db
+  namespace: default
+  resourceVersion: "20475"
+  uid: a0b573e3-3a6d-4a54-af1b-4d8ceb53e774
+spec:
+  clusterIP: 172.20.107.75
+  clusterIPs:
+  - 172.20.107.75
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 6333
+    protocol: TCP
+    targetPort: 6333
+  selector:
+    app: db
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
