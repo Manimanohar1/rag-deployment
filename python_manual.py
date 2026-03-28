@@ -3,7 +3,7 @@
 #!/usr/bin/env python3
 import requests
 
-url = "http://172.20.93.175:11434/api/generate" # <-- Verify your Ollama Service IP
+url = "http://172.20.93.175:11434/api/generate"
 
 print("--- AI Infrastructure CLI Online ---")
 print("Type 'exit' to terminate the connection.\n")
